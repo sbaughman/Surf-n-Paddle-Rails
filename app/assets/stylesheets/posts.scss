@@ -127,11 +127,20 @@ main {
     padding: 0;
     padding-bottom: 1px;
     display: inline-block;
-    width: 135px;
+    width: 140px;
     margin-right: 10px;
+    transition: background .25s ease-in-out;
   }
   a:last-child {
     background: #337ab7;
+  }
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+    background: #333;
+  }
+  a:last-child:hover {
+    background: rgba(6,46,82,1);
   }
 }
 
@@ -252,22 +261,23 @@ aside {
     bottom: 0;
     left: 0;
     padding: 10px;
+    transition: color .25s ease-in-out;
   }
   a:hover {
     color: #337ab7;
     text-decoration: none;
   }
   .post1 {
-    background-image: url(images/space1.jpg);
+    background-image: url(asset_path('image1'));
   }
   .post2 {
-    background-image: url(images/space2.jpg);
+    background-image: url(asset_path('image2'));
   }
   .post3 {
-    background-image: url(images/space3.jpg);
+    background-image: url(asset_path('image3'));
   }
   .post4 {
-    background-image: url(images/space4.jpg);
+    background-image: url(asset_path('image4'));
   }
 }
 
