@@ -5,4 +5,7 @@ class PostsController < ApplicationController
     @newest_post = @posts.first
   end
 
+  def show
+  end
+
 end
