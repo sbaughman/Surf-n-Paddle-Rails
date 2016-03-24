@@ -1,14 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SurfNRails</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
 </head>
 <body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 logo">
+          <%= image_tag('logo', id: 'logo') %>
+          THE SPACE COMPANY BLOG
+        </div>
+        <div class="col-xs-6">
+          <nav>
+            <ul class="list-inline text-right">
+              <li><a href="#">ABOUT</a></li>
+              <li><a href="#">SEARCH <i class="glyphicon glyphicon-search"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <h1 class="text-center">THE SPACE COMPANY</h1>
+      <h2 class="text-center">An Ironyard Academy Project Est Fall 2013</h2>
+    </div>
+  </header>
 
-<%= yield %>
+  <%= yield %>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          The Ironyard Copyright 2013. All Rights Reserved
+        </div>
+        <div class="col-xs-6">
+          <nav>
+            <ul class="list-inline text-right">
+              <li><a href="#">Mars</a></li>
+              <li><a href="#">Saturn</a></li>
+              <li><a href="#">Pluto</a></li>
+              <li><a href="#">Moon</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 </html>

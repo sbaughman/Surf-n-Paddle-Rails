@@ -1,3 +1,318 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  height: 400px;
+  background-color: gray;
+  z-index: 1;
+  position: relative;
+  color: rgba(0,0,0,0.8)
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  z-index: -1;
+  background: url(asset_path('header_bg.jpg')) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.logo {
+  padding: 15px;
+  color: rgba(180,180,180,0.9);
+}
+
+header {
+  font-family: 'Oswald', sans-serif;
+  h1 {
+    margin-top: 90px;
+    color: rgba(255,255,255,0.9);
+    font-size: 80px;
+  }
+  h2 {
+    margin-top: -10px;
+    font-size: 15px;
+    color: rgba(180,180,180,0.9);
+  }
+  #logo {
+    width: 6%;
+    margin-top: -5px;
+  }
+  ul {
+    padding: 15px;
+  }
+  a {
+    color: rgba(180,180,180,0.9);
+  }
+  a:hover {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+  }
+}
+
+main {
+  margin-bottom: 60px;
+  margin-top: 60px;
+  .avatar {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    margin-right: 15px;
+  }
+}
+
+.content {
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    line-height: 1.75;
+    padding-top: 10px;
+    color: #777;
+  }
+}
+
+.interject {
+  padding: 10px;
+  font-size: 25px;
+  border-left: 2px solid #337ab7;
+  color: black;
+}
+
+.avatar {
+  border-radius: 50%;
+  opacity: .7;
+}
+
+.subheading {
+  margin-bottom: 20px;
+  margin-top: -5px;
+  p {
+    color: #337ab7;
+    font-size: 10px;
+    display: inline;
+  }
+  span {
+    margin-left: 10px;
+    text-decoration: underline;
+    color: #bbb;
+  }
+}
+
+.options {
+  margin-top: 20px;
+  li {
+    background: #777;
+    margin-right: 10px;
+  }
+  i {
+    padding: 5px;
+    color: #fff;
+    background: #333;
+    margin-right: 10px;
+  }
+  #share {
+    background: rgba(6,46,82,1);
+  }
+  a {
+    color: #fff;
+    background: #777;
+    padding: 5px;
+    display: inline-block;
+    width: 135px;
+    margin-right: 10px;
+  }
+  a:last-child {
+    background: #337ab7;
+  }
+}
+
+aside {
+  margin-bottom: 60px;
+  h2 {
+    margin-top: 80px;
+    font-size: 16px;
+    color: #337ab7;
+  }
+  p {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 2;
+  }
+  .avatar {
+    height: 50px;
+    width: 50px;
+  }
+  a:hover {
+    color: #337ab7;
+  }
+}
+
+.author {
+  text-align: center;
+  margin-top: 60px;
+  h3 {
+    font-size: 14px;
+    margin-top: 7px;
+    color: #337ab7;
+  }
+  ul {
+    margin-top: -10px;
+  }
+  a {
+    color: #bbb;
+    font-size: 10px;
+  }
+}
+
+.ad {
+  margin-top: 40px;
+  height: 250px;
+  width: 100%;
+  background: gray;
+  z-index: 1;
+  position: relative;
+  color: rgba(0,0,0,0.8);
+  a {
+    position: relative;
+    margin-top: 255px;
+    font-size: 10px;
+    color: #bbb;
+    text-decoration: underline;
+  }
+}
+
+.ad::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  z-index: -1;
+  background: url(images/header_bg.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+
+.post-links {
+  border-top: 1px solid #eee;
+  font-size: 0;
+  h1 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  div {
+    display: inline-block;
+    width: calc(1/4 * 100%);
+    height: calc(1/4 * 100vw);
+    overflow: hidden;
+    position: relative;
+    background-size: 100%;
+    z-index: 1;
+  }
+  div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    z-index: -1;
+    background: gray;
+  }
+  a {
+    font-size: 20px;
+    color: rgba(255,255,255,0.9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+  }
+  a:hover {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  .post1 {
+    background-image: url(images/space1.jpg);
+  }
+  .post2 {
+    background-image: url(images/space2.jpg);
+  }
+  .post3 {
+    background-image: url(images/space3.jpg);
+  }
+  .post4 {
+    background-image: url(images/space4.jpg);
+  }
+}
+
+footer {
+  font-family: 'Oswald', sans-serif;
+  background-color: #333;
+  color: #eee;
+  padding: 30px;
+  font-size: 12px;
+  li {
+    border-left: 1px solid #eee;
+  }
+  li:first-child {
+    border-left: none;
+  }
+  a {
+    color: #eee;
+    font-size: 12px;
+    padding: 0 10px;
+  }
+  a:hover {
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header h1 {
+    font-size: 60px;
+  }
+
+  .content h1 {
+    font-size: 30px;
+  }
+
+  .interject {
+    font-size: 20px;
+  }
+
+  .author {
+    margin-top: 20px;
+  }
+
+  main {
+    margin-bottom: 20px;
+  }
+
+  footer {
+    padding: 20px;
+    font-size: 10px;
+    a {
+      font-size: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  footer {
+    padding: 10px;
+  }
+}
