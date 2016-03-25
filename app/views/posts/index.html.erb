@@ -7,12 +7,17 @@
           <%= image_tag(@current_post.author.parameterize, class: 'avatar') %>
           <p><%= @current_post.author %> <span>on <%= @current_post.created_at.strftime("%A %b %d %Y %-I:%M %p") %></span></p>
         </div>
-        <%= simple_format @current_post.body %>
+        <%= simple_format @current_post.first_half(@current_post.body) %>
+        <div class="interject">
+          <%= @current_post.interject %>
+        </div>
+        <%= simple_format @current_post.second_half(@current_post.body) %>
         <div class="options">
           <a href="#"><i class="glyphicon glyphicon-comment"></i>Read Comments</a>
           <a href="#"><i class="glyphicon glyphicon-cloud-upload"></i>Read Later</a>
           <a href="#"><i id="share" class="glyphicon glyphicon-share"></i>Share This Post</a>
         </div>
+
       </main>
     </div>
     <div class="col-sm-4">
