@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-sm-8 content">
       <main>
-        <h1><%= @newest_post.title.upcase %></h1>
+        <h1><%= @current_post.title.upcase %></h1>
         <div class="subheading">
-          <%= image_tag(@newest_post.author.parameterize, class: 'avatar') %>
-          <p><%= @newest_post.author %> <span>on <%= @newest_post.created_at.strftime("%A %b %d %Y %-I:%M %p") %></span></p>
+          <%= image_tag(@current_post.author.parameterize, class: 'avatar') %>
+          <p><%= @current_post.author %> <span>on <%= @current_post.created_at.strftime("%A %b %d %Y %-I:%M %p") %></span></p>
         </div>
-        <%= simple_format @newest_post.body %>
+        <%= simple_format @current_post.body %>
         <div class="options">
           <a href="#"><i class="glyphicon glyphicon-comment"></i>Read Comments</a>
           <a href="#"><i class="glyphicon glyphicon-cloud-upload"></i>Read Later</a>
@@ -18,8 +18,8 @@
     <div class="col-sm-4">
       <aside>
         <div class="author">
-          <%= image_tag(@newest_post.author.parameterize, class: 'avatar') %>
-          <h3 class="text-center"><%= @newest_post.author.upcase %></h3>
+          <%= image_tag(@current_post.author.parameterize, class: 'avatar') %>
+          <h3 class="text-center"><%= @current_post.author.upcase %></h3>
           <ul class="list-inline text-center">
             <li><a href="#">Twitter</a></li>
             <li><a href="#">Facebook</a></li>
@@ -35,18 +35,20 @@
     </div>
   </div>
 </div>
-<section class="post-links content">
-  <h1 class="text-center">MOST POPULAR POSTS</h1>
-  <div class="post1">
-    <a href="#">OIL SLICKS FROM BEYOND</a>
+<div class="container-fluid post-links">
+  <div class="row">
+    <div class="col-xs-12 headline text-center">
+      <h1>MOST POPULAR POSTS</h1>
+    </div>
+    <% @posts.each do |post| %>
+      <% unless post.id == @current_post.id %>
+        <div class="col-xs-3 post-link">
+          <%= link_to(show_path(id: post.id)) do %>
+            <%= image_tag(post.thumbnail, class: 'img-responsive') %>
+            <%= content_tag(:h2, post.title) %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  <div class="post2">
-    <a href="#">PLANET-TICKLING ROBOTS ATTACK</a>
-  </div>
-  <div class="post3">
-    <a href="#">SPACE TOILETS: FACT OR FICTION?</a>
-  </div>
-  <div class="post4">
-    <a href="#">CAREFUL! THE SUN WILL BURN YOUR FINGERS</a>
-  </div>
-</section>
+</div>
