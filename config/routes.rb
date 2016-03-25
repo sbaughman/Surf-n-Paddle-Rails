@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'posts#index'
 
+  get '/about' => 'static_pages#about'
+
   get '/:id' => 'posts#show', as: :show
 
   # Example of regular route:

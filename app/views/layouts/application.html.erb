@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><%= @current_post.title %></title>
+  <title>
+    <% if @current_post %>
+      <%= @current_post.title %>
+    <% else %>
+      <%= @title %>
+    <% end %>
+  </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -22,7 +28,7 @@
         <div class="col-xs-6">
           <nav>
             <ul class="list-inline text-right">
-              <li><a href="#">ABOUT</a></li>
+              <li><%= link_to "ABOUT", '/about' %></li>
               <li><a href="#">SEARCH <i class="glyphicon glyphicon-search"></i></a></li>
             </ul>
           </nav>
