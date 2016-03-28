@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'static_pages#about'
 
-  get '/:id' => 'posts#show', as: :show
+  get '/posts/:id' => 'posts#show', as: :show
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
