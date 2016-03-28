@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= @current_post ? @current_post.title : @title %>
+  </title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 logo">
+          <%= link_to image_tag('logo', id: 'logo')+"THE AUTHORITARIAN BLOG", root_path %>
+        </div>
+        <div class="col-xs-6">
+          <nav>
+            <ul class="list-inline text-right">
+              <li><%= link_to "ABOUT", '/about' %></li>
+              <li><a href="#">SEARCH <i class="glyphicon glyphicon-search"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <h1 class="text-center">THE AUTHORITARIAN</h1>
+      <h2 class="text-center">Great Authors. Great Content.</h2>
+    </div>
+  </header>
+
+  <%= yield %>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          The Ironyard Copyright 2013. All Rights Reserved
+        </div>
+        <div class="col-xs-6">
+          <nav>
+            <ul class="list-inline text-right">
+              <li><a href="#">Books</a></li>
+              <li><a href="#">Are</a></li>
+              <li><a href="#">Neat</a></li>
+              <li><a href="#">Read</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</body>
+</html>
