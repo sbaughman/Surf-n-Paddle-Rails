@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 
+  belongs_to :author
+
   def first_half(text)
     paragraph_array = text.split("\n")
     first_half = paragraph_array.slice(0..paragraph_array.length/2 - 1)
