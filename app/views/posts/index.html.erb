@@ -9,7 +9,7 @@
         </div>
         <%= simple_format @current_post.first_half(@current_post.body) %>
         <div class="interject">
-          <%= @current_post.interject %>
+          <%= @current_post.interject if @current_post.interject %>
         </div>
         <%= simple_format @current_post.second_half(@current_post.body) %>
         <div class="options">
