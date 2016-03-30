@@ -1,0 +1,21 @@
+<h1>Create New Post</h1>
+
+<%= form_for @post do |f| %>
+  <div class="">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  <div class="">
+    <%= f.label :author %>
+    <%= f.select('author_id', Author.all.map { |auth| [ auth.name, auth.id ] }, {include_blank: 'None'} ) %>
+  </div>
+  <div class="">
+    <%= f.submit "Create Post" %>
+  </div>
+<% end %>
+
+<%= link_to "Home", root_path %>

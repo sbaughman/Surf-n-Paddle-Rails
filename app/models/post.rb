@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
 
   belongs_to :author
 
-  validates :title, :body, :author_id, presence: true
+  validates :title, :body, :author, presence: true
 
   def first_half(text)
     paragraph_array = text.split("\n")
