@@ -4,7 +4,7 @@
       <h1>MOST POPULAR POSTS</h1>
     </div>
     <% @posts.each do |post| %>
-      <% unless post.id == @current_post.id %>
+      <% unless post.id == @post.id %>
         <div class="col-xs-3 post-link">
           <%= link_to(post_path(post)) do %>
             <%= image_tag(post.thumbnail, class: 'img-responsive') %>

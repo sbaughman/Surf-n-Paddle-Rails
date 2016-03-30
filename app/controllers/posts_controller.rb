@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
 
   before_action :get_posts, only: [:index, :show]
-  before_action :fetch_post, only: [:show]
+  before_action :fetch_post, only: [:show, :edit]
   before_action :get_ad, only: [:index, :show]
 
   def index
-    @current_post = @posts.first
+    @post = @posts.first
   end
 
   def show
@@ -25,6 +25,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   private
 
   def get_posts
@@ -32,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def fetch_post
-    @current_post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def get_ad
