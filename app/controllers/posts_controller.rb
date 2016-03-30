@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   before_action :get_recent_posts, only: [:index, :show]
 
   def index
-    @post = @posts.last
   end
 
   def show
@@ -39,7 +38,11 @@ class PostsController < ApplicationController
   private
 
   def get_posts
-    @posts = Post.all.sort_by(&:created_at).reverse
+    if params[:author_id]
+      @posts = Post.where("author_id = ?", params[:author_id]).order("created_at DESC").all
+    else
+      @posts = Post.order("created_at DESC").all
+    end
   end
 
   def fetch_post
@@ -51,7 +54,7 @@ class PostsController < ApplicationController
   end
 
   def get_recent_posts
-    @recent_posts = get_posts.take(4)
+    @recent_posts = get_posts.where("id != ?", params[:id]).limit(4)
   end
 
   def post_params

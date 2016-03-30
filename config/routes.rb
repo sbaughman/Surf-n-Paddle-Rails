@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  resources :authors, only: [:new, :create] do
+  resources :authors do
     resources :posts, only: [:index]
   end
 

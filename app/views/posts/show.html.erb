@@ -16,7 +16,9 @@
         <%= simple_format @post.second_half(@post.body) %>
         <div class="options">
           <a href="#"><i class="glyphicon glyphicon-comment"></i>Read Comments</a>
-          <a href="#"><i class="glyphicon glyphicon-cloud-upload"></i>Read Later</a>
+          <%= link_to author_posts_path(@post.author) do %>
+          <i class="glyphicon glyphicon-cloud-upload"></i>Author's Posts
+          <% end %>
           <%= link_to edit_post_path(@post) do %>
           <i id="share" class="glyphicon glyphicon-share"></i>Edit This Post
           <% end %>
