@@ -1,0 +1,45 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-sm-8 content">
+      <main>
+        <h1><%= @post.title.upcase %></h1>
+        <div class="subheading">
+          <%= image_tag(@post.author.picture, class: 'avatar') %>
+          <p><%= @post.author.name %> <span>on <%= @post.created_at.strftime("%A %b %d %Y %-I:%M %p") %></span></p>
+        </div>
+        <%= simple_format @post.first_half(@post.body) %>
+        <% if @post.interject %>
+          <div class="interject">
+            <%= @post.interject %>
+          </div>
+        <% end %>
+        <%= simple_format @post.second_half(@post.body) %>
+        <div class="options">
+          <a href="#"><i class="glyphicon glyphicon-comment"></i>Read Comments</a>
+          <%= link_to author_posts_path(@post.author) do %>
+          <i class="glyphicon glyphicon-cloud-upload"></i>Author's Posts
+          <% end %>
+          <%= link_to edit_post_path(@post) do %>
+          <i id="share" class="glyphicon glyphicon-share"></i>Edit This Post
+          <% end %>
+        </div>
+
+      </main>
+    </div>
+    <div class="col-sm-4">
+      <aside>
+        <div class="author">
+          <%= image_tag(@post.author.picture, class: 'avatar') %>
+          <h3 class="text-center"><%= @post.author.name.upcase %></h3>
+          <ul class="list-inline text-center">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+        <%= render partial: 'ad', locals: { ad: @ad } %>
+      </aside>
+    </div>
+  </div>
+</div>
+<%= render partial: "post_links" %>

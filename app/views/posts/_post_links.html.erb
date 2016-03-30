@@ -1,12 +1,12 @@
 <div class="container-fluid post-links">
   <div class="row">
     <div class="col-xs-12 headline text-center">
-      <h1>MOST POPULAR POSTS</h1>
+      <h1>MOST RECENT POSTS</h1>
     </div>
-    <% @posts.each do |post| %>
-      <% unless post.id == @current_post.id %>
+    <% @recent_posts.each do |post| %>
+      <% unless post.id == @post.id %>
         <div class="col-xs-3 post-link">
-          <%= link_to(show_path(id: post.id)) do %>
+          <%= link_to(post_path(post)) do %>
             <%= image_tag(post.thumbnail, class: 'img-responsive') %>
             <%= content_tag(:h2, post.title) %>
           <% end %>

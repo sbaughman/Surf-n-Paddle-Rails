@@ -80,6 +80,59 @@ main {
     padding-top: 10px;
     color: #777;
   }
+
+}
+
+.post-link {
+  margin-top: 15px;
+  a {
+    font-size: 20px;
+    transition: color .25s ease-in-out;
+    display: block;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  h5 {
+    color: #999;
+    display: inline-block;
+  }
+}
+
+.post-form {
+  margin: 50px 0;
+  position: relative;
+  h1 {
+    margin-bottom: 25px;
+  }
+  .form-group {
+    padding-right: 20px;
+  }
+  .form {
+    margin-bottom: 40px;
+  }
+  .field_with_errors {
+    input {
+      border: 2px solid #d22;
+    }
+    textarea {
+      border: 2px solid #d22;
+    }
+
+  }
+  #error_explanation {
+    h2 {
+      color: #777;
+      font-size: 16px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      li {
+        color: #d22;
+      }
+    }
+  }
 }
 
 .interject {

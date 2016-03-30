@@ -1,0 +1,18 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-sm-8 post-form">
+      <h1>EDIT AUTHOR</h1>
+
+      <%= render partial: "form", locals: { author: @author } %>
+
+      <div id="home-link">
+        <%= link_to "Back to Home", root_path %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <aside>
+        <%= render partial: '/posts/ad', locals: { ad: @ad } %>
+      </aside>
+    </div>
+  </div>
+</div>

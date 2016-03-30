@@ -1,0 +1,8 @@
+<div class="ad">
+  <%= link_to(ad.url) do %>
+    <%= image_tag(ad.pic, class: "img-responsive") %>
+    <%= content_tag(:h6, ad.title, class: "text-right") %>
+  <% end %>
+  <h2><%= @ad.headline %></h2>
+  <p><%= @ad.text %></p>
+</div>

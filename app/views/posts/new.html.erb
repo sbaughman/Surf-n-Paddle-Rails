@@ -1,0 +1,18 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-sm-8 post-form">
+      <h1>CREATE NEW POST</h1>
+
+      <%= render partial: "form", locals: { post: @post } %>
+
+      <div id="home-link">
+        <%= link_to "Back to Posts", root_path %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <aside>
+        <%= render partial: 'ad', locals: { ad: @ad } %>
+      </aside>
+    </div>
+  </div>
+</div>
