@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  resources :authors, only: [:new, :create] do
+    resources :posts, only: [:index]
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

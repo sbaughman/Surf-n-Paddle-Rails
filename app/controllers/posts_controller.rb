@@ -3,13 +3,13 @@ class PostsController < ApplicationController
   before_action :get_posts, only: [:index, :show]
   before_action :fetch_post, only: [:show, :edit, :update, :destroy]
   before_action :get_ad
+  before_action :get_recent_posts, only: [:index, :show]
 
   def index
-    @post = @posts.first
+    @post = @posts.last
   end
 
   def show
-    render 'index'
   end
 
   def new
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   private
 
   def get_posts
-    @posts = Post.all.sort_by(&:created_at)
+    @posts = Post.all.sort_by(&:created_at).reverse
   end
 
   def fetch_post
@@ -48,6 +48,10 @@ class PostsController < ApplicationController
 
   def get_ad
     @ad = Ad.all.sample
+  end
+
+  def get_recent_posts
+    @recent_posts = get_posts.take(4)
   end
 
   def post_params
