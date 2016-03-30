@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
 
   before_action :get_posts, only: [:index, :show]
-  before_action :fetch_post, only: [:show, :edit]
-  before_action :get_ad, only: [:index, :show]
+  before_action :fetch_post, only: [:show, :edit, :update, :destroy]
+  before_action :get_ad
 
   def index
     @post = @posts.first
@@ -19,13 +19,21 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to post_path
+      redirect_to @post
     else
       render 'new'
     end
   end
 
   def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'new'
+    end
   end
 
   private

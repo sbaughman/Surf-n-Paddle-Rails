@@ -8,9 +8,11 @@
           <p><%= @post.author.name %> <span>on <%= @post.created_at.strftime("%A %b %d %Y %-I:%M %p") %></span></p>
         </div>
         <%= simple_format @post.first_half(@post.body) %>
-        <div class="interject">
-          <%= @post.interject if @post.interject %>
-        </div>
+        <% if @post.interject %>
+          <div class="interject">
+            <%= @post.interject %>
+          </div>
+        <% end %>
         <%= simple_format @post.second_half(@post.body) %>
         <div class="options">
           <a href="#"><i class="glyphicon glyphicon-comment"></i>Read Comments</a>
@@ -31,14 +33,7 @@
             <li><a href="#">Instagram</a></li>
           </ul>
         </div>
-        <div class="ad">
-          <%= link_to(@ad.url) do %>
-            <%= image_tag(@ad.pic, class: "img-responsive") %>
-            <%= content_tag(:h6, @ad.title, class: "text-right") %>
-          <% end %>
-        </div>
-        <h2><%= @ad.headline %></h2>
-        <p><%= @ad.text %></p>
+        <%= render partial: 'ad', locals: { ad: @ad } %>
       </aside>
     </div>
   </div>
