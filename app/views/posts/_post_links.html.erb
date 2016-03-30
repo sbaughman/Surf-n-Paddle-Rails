@@ -6,7 +6,7 @@
     <% @posts.each do |post| %>
       <% unless post.id == @current_post.id %>
         <div class="col-xs-3 post-link">
-          <%= link_to(show_path(id: post.id)) do %>
+          <%= link_to(post_path(post)) do %>
             <%= image_tag(post.thumbnail, class: 'img-responsive') %>
             <%= content_tag(:h2, post.title) %>
           <% end %>
