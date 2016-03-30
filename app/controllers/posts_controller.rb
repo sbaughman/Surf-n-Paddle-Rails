@@ -39,9 +39,9 @@ class PostsController < ApplicationController
 
   def get_posts
     if params[:author_id]
-      @posts = Post.where("author_id = ?", params[:author_id]).order("created_at DESC").all
+      @posts = Post.where("author_id = ?", params[:author_id]).order("created_at DESC").page(params[:page]).per_page(10)
     else
-      @posts = Post.order("created_at DESC").all
+      @posts = Post.order("created_at DESC").page(params[:page]).per_page(10)
     end
   end
 
